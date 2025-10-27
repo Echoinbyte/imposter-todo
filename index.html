@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imposters</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="/public/graphics/Imposter-logo.svg"
+      type="image/svg"
+    />
+    <link rel="manifest" href="/public/manifest.json" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-black overflow-x-hidden">
+    <!-- Video Background -->
+    <section
+      class="video-bg absolute top-0 left-0 w-full -z-20 mt-12 aspect-[1/1.15] sm:m-0 md:aspect-[1.06/1] [mask-image:linear-gradient(to_bottom,transparent,black_5%,black_80%,transparent)] [webkit-mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)] md:[mask-image:linear-gradient(to_bottom,black_90%,transparent)] md:[webkit-mask-image:linear-gradient(to_bottom,black_90%,transparent)]"
+    >
+      <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+        <source src="/public/videos/demo1.mp4" type="video/mp4" />
+        <source src="/public/videos/demo1.webm" type="video/webm" />
+      </video>
+    </section>
+
+    <section id="menu" class="translate-x-full absolute top-14 left-0 bg-slate-500 h-full w-full z-30 transition-all duration-200">
+      Hello
+    </section>
+
+    <!-- Header -->
+
+    <header
+      class="text-white w-full flex flex-row justify-between items-center p-5 pr-10 max-w-[1430px] mx-auto px-2.5 md:px-20 z-40"
+    >
+      <div class="flex flex-row items-center gap-x-[68px]">
+        <div>
+          <img
+            src="/public/graphics/Imposter-logo.svg"
+            alt="Imposters"
+            class="w-6 md:w-8 lg:w-12 aspect-square"
+            srcset=""
+          />
+        </div>
+        <nav class="hidden lg:flex flex-row items-center gap-7">
+          <a href="/blogs" class="transition-all hover:text-(--logo-color)"
+            >Blogs</a
+          >
+          <a href="/about" class="transition-all hover:text-(--logo-color)"
+            >About</a
+          >
+          <a href="/contact" class="transition-all hover:text-(--logo-color)"
+            >Contact</a
+          >
+          <a href="/app" class="transition-all hover:text-(--logo-color)"
+            >App</a
+          >
+        </nav>
+      </div>
+      <div class="flex flex-row justify-center items-center gap-8">
+        <div class="hidden md:flex">
+          <a
+            href="https://github.com/echoinbyte"
+            class="flex gap-2 hover:text-(--logo-color)"
+          >
+            <img width="16px" height="16px" src="/public/icons/github.svg" />
+            Star Us
+          </a>
+        </div>
+        <div onclick="toggleMenu()" class="flex lg:hidden cursor-pointer">
+          <img src="/public/icons/menu.svg" class="h-6 w-6" alt="" srcset="">
+        </div>
+        <div class="hidden lg:flex flex-row items-center justify-center gap-4">
+          <button
+            class="flex items-center justify-center cursor-pointer rounded-full px-3 py-1 bg-black border border-white hover:border-(--logo-color) transition-all duration-200"
+          >
+            <a
+              href="/login"
+              class="link-1 font-semibold uppercase text-xs tracking-tighter"
+            >
+              Sign In
+            </a>
+          </button>
+          <button
+            class="flex items-center justify-center cursor-pointer rounded-full px-3 py-1 bg-black border border-white hover:border-(--logo-color) transition-all duration-200"
+          >
+            <a
+              href="/signup"
+              class="link-2 font-semibold uppercase text-xs tracking-tighter"
+            >
+              Get Started
+            </a>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+
+    <main
+      class="main-container text-white flex flex-row items-center p-5 pr-10 max-w-[1430px] h-full mx-auto px-2.5 md:px-20 aspect-[1/1.15] md:aspect-[1.06/1]"
+    >
+      <section
+        class="absolute top-0 left-0 w-full -z-10 mt-12 aspect-[1/1.15] sm:m-0 md:aspect-[1.06/1]"
+      >
+        <img
+          src="/public/pictures/Hovering-Image.png"
+          class="w-full h-full object-cover opacity-90 transition-all duration-200 [mask-image:radial-gradient(circle_50px,_rgba(0,_0,_0,_1)_0%,_rgba(0,_0,_0,_0)_100%)] [-webkit-mask-image:radial-gradient(circle_50px,_rgba(0,_0,_0,_1)_0%,_rgba(0,_0,_0,_0)_100%)]"
+          id="hoverImage"
+          alt="Hover"
+          srcset=""
+        />
+      </section>
+      <section
+        class="w-3/5 h-full flex flex-col gap-3 md:gap-8 xl:gap-10 items-start md:translate-y-12 lg:translate-y-28"
+      >
+        <div class="text-group flex flex-col gap-3 md:gap-5">
+          <h1
+            class="bg-gradient-to-br from-white from-30% via-[#d5d8f6] via-80% to-[#fdf7fe] bg-clip-text font-bold leading-[1] tracking-tight text-transparent 2xl:text-[84px] lg:text-6xl md:text-[40px] sm:text-4xl min-[365px]:text-[24px] text-[18px]"
+          >
+            Everything App
+            <br />
+            For
+            <span
+              class="bg-gradient-to-r from-[#5C73E6] to-(--logo-color) bg-clip-text text-transparent"
+              >True Dream</span
+            >
+          </h1>
+          <p
+            class="bg-gradient-to-br from-white from-30% via-[#d5d8f6] via-80% to-[#fdf7fe] bg-clip-text font-medium leading-[1.2] text-transparent 2xl:text-2xl lg:text-xl md:text-lg sm:text-base min-[365px]:text-sm text-[12px]"
+          >
+            Imposters, serves as an executor of your plans.
+          </p>
+        </div>
+        <div class="button">
+          <button
+            class="relative font-bold -tracking-[0.015em] text-[12px] uppercase py-2 min-[365px]:px-16 bg-[#D1D1D1] text-[#5A250A] rounded-full flex flex-row items-center justify-center gap-2 cursor-pointer overflow-hidden z-10 px-4"
+          >
+            <span class="text-[#5A250A]">Try &rarr;</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Hero Tail Section -->
+
+    <main
+      class="text-white flex flex-row items-center p-5 pr-10 max-w-[1430px] h-full mx-auto px-2.5 md:px-20 mb-6"
+    >
+      <section>
+        <p class="text-slate-300">Everything you need for a productive self</p>
+        <div class="flex flex-row gap-4 overflow-hidden">
+          <span class="font-medium">Think</span>
+          <span class="text-slate-500">&middot;</span>
+          <span class="font-medium">Plan</span>
+          <span class="text-slate-500">&middot;</span>
+          <span class="font-medium">Act</span>
+          <span class="text-slate-500">&middot;</span>
+          <span class="font-medium">Achieve</span>
+        </div>
+      </section>
+    </main>
+
+    <!-- Features Section -->
+
+    <main
+      class="bg-white text-black flex flex-col gap-6 px-5 md:px-20 lg:py-40 md:py-32 sm:py-24 py-16"
+    >
+      <!-- Text Section -->
+      <section class="flex flex-col gap-4">
+        <h2
+          class="font-semibold tracking-tight text-black text-3xl sm:text-4xl md:text-5xl lg:text-[70px]"
+        >
+          Unmatched Productivity
+        </h2>
+        <p class="max-w-lg md:max-w-[705px] text-base sm:text-lg md:text-xl">
+          Imposter is a process, project, time, and knowledge management
+          platform that provides amazing collaboration opportunities for
+          developers and product teams alike.
+        </p>
+      </section>
+
+      <!-- Responsive Grid Layout -->
+      <section class="w-full flex flex-col gap-4">
+        <!-- First Row -->
+        <div class="flex flex-col lg:flex-row gap-4 w-full">
+          <div
+            class="lg:w-1/3 w-full border border-black flex justify-center items-center p-4"
+          >
+            #1
+          </div>
+          <div
+            class="lg:w-2/3 w-full border border-black flex justify-center items-center p-4"
+          >
+            #2
+          </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="flex flex-col lg:flex-row gap-4 w-full">
+          <div
+            class="lg:w-2/3 w-full border border-black flex justify-center items-center p-4"
+          >
+            #3
+          </div>
+          <div class="relative lg:w-1/3 w-full bg-black rounded-lg p-2">
+            <video
+              class="h-full w-full object-cover rounded-md"
+              autoplay
+              loop
+              muted
+              playsinline
+            >
+              <source src="/public/videos/waves.mp4" type="video/mp4" />
+              <source src="/public/videos/waves.webm" type="video/webm" />
+            </video>
+            <h3
+              class="absolute bottom-0 left-0 p-2 text-white bg-black/60 rounded-b-lg text-sm sm:text-base"
+            >
+              <strong>Notifications.</strong> Keep up to date with any changes
+              by receiving instant notifications.
+            </h3>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- How it Works -->
+    <!-- Why Choose Us -->
+    <!-- Demo -->
+    <!-- Footer -->
+
+    <script defer src="/src/script.js"></script>
+  </body>
+</html>

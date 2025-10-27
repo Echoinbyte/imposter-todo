@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --logo-color: #a0bdf5;
+    --hover-color: #322f2a;
+  }
+
+  body {
+    font-family: "Inter", serif;
+    cursor: url("/public/graphics/Imposter-logo.svg"), auto;
+  }
+}

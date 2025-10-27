@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imposters - App</title>
+    <link
+      rel="shortcut icon"
+      href="/public/graphics/Imposter-logo.svg"
+      type="image/svg"
+    />
+    <link rel="stylesheet" href="../src/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#1E1E1E]">
+    <div class="h-screen w-full flex flex-row">
+      <!-- Sidebar -->
+
+      <aside
+        id="sidebar"
+        class="hidden md:flex flex-col md:w-[300px] h-full bg-[#262626] text-white p-2 transition-all duration-200 z-20"
+      >
+        <!-- Header Section -->
+
+        <header
+          class="relative flex flex-row items-center justify-between w-full mb-4"
+        >
+          <div
+            id="profile"
+            onclick="handleProfileToggle()"
+            class="flex flex-row items-center gap-2 p-2 bg-transparent hover:bg-[#322F2A] transition-all duration-200 rounded-md cursor-pointer"
+          >
+            <div class="p-1 h-6 w-6 border border-white rounded-full">
+              <img
+                src="/public/graphics/Imposter-logo.svg"
+                class="h-full w-full"
+                alt=""
+                srcset=""
+              />
+            </div>
+            <h3 class="font-medium tracking-tighter">Imposters</h3>
+          </div>
+          <div
+            id="toggle"
+            onclick="handleSideBarToggle()"
+            class="relative flex flex-row justify-center items-center h-8 w-8 p-1 bg-transparent hover:bg-[#322F2A] transition-all duration-500 rounded-md cursor-pointer group"
+          >
+            <img
+              src="/public/icons/sidebar-icon.svg"
+              class="h-full w-full"
+              alt=""
+              srcset=""
+            />
+            <kbd
+              class="absolute right-0 translate-x-[120%] hidden group-hover:flex flex-row items-center justify-center gap-1 bg-[#404040] p-1 text-xs rounded-md"
+            >
+              Toggle <span class="px-1 rounded-sm bg-[#666666]">M</span>
+            </kbd>
+          </div>
+          <!-- Profile Toggle -->
+          <div
+            id="profilemenu"
+            class="hidden w-full absolute left-0 top-12 z-10 bg-[#282828] border border-[#3D3D3D] rounded-md p-2"
+          >
+            <div
+              class="flex flex-row items-center justify-between p-2 bg-transparent hover:bg-[#322F2A] transition-all duration-200 rounded-md cursor-pointer"
+            >
+              <div class="flex flex-row items-center gap-2">
+                <img
+                  src="/public/icons/growth.svg"
+                  class="h-6 aspect-square"
+                  alt=""
+                  srcset=""
+                />
+                <div>
+                  <h3 class="text-sm font-medium tracking-tighter">
+                    Imposters
+                  </h3>
+                  <p class="text-xs text-[#cccccc]">1/9 tasks</p>
+                </div>
+              </div>
+              <span class="text-xs text-[#cccccc]"> O P </span>
+            </div>
+
+            <div
+              class="flex flex-row items-center justify-between p-2 bg-transparent hover:bg-[#322F2A] transition-all duration-200 rounded-md cursor-pointer"
+            >
+              <div class="flex flex-row items-center gap-2">
+                <img
+                  src="/public/icons/setting.svg"
+                  class="h-6 aspect-square"
+                  alt=""
+                  srcset=""
+                />
+                <div>
+                  <h3 class="text-sm font-medium tracking-tighter">Settings</h3>
+                </div>
+              </div>
+              <span class="text-xs text-[#cccccc]"> O S </span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Aside Section -->
+
+        <section
+          class="flex flex-col gap-1 items-start justify-start w-full h-full"
+        >
+          <div
+          onclick="handleAddTaskMenuToggle()"
+            class="relative w-full flex flex-row items-center justify-start gap-2 p-2 bg-transparent hover:bg-[#322F2A] transition-all duration-200 rounded-md cursor-pointer group"
+          >
+            <img
+              src="/public/icons/add-task.svg"
+              class="h-6 aspect-square"
+              alt=""
+              srcset=""
+            />
+            <h3 class="text-[#a0bdf5] font-medium text-sm">Add Task</h3>
+            <kbd
+              class="absolute right-0 translate-x-[120%] hidden group-hover:flex flex-row items-center justify-center gap-1 bg-[#404040] p-1 text-xs rounded-md"
+            >
+              Add Task <span class="px-1 rounded-sm bg-[#666666]">A</span>
+            </kbd>
+          </div>
+          <div
+            class="relative w-full flex flex-row items-center justify-start gap-2 p-2 bg-transparent hover:bg-[#322F2A] transition-all duration-200 rounded-md cursor-pointer group"
+          >
+            <img
+              src="/public/icons/search.svg"
+              class="h-6 aspect-square"
+              alt=""
+              srcset=""
+            />
+            <h3 class="text-[#cccccc] font-medium text-sm">Search</h3>
+            <kbd
+              class="absolute right-0 translate-x-[120%] hidden group-hover:flex flex-row items-center justify-center gap-1 bg-[#404040] p-1 text-xs rounded-md"
+            >
+              Search <span class="px-1 rounded-sm bg-[#666666]">Spacebar</span>
+            </kbd>
+          </div>
+          <div
+            class="relative w-full flex flex-row items-center justify-start gap-2 p-2 bg-transparent hover:bg-[#322F2A] transition-all duration-200 rounded-md cursor-pointer group"
+          >
+            <img
+              src="/public/icons/today.svg"
+              class="h-6 aspect-square"
+              alt=""
+              srcset=""
+            />
+            <h3 class="text-[#cccccc] font-medium text-sm">Today</h3>
+            <kbd
+              class="absolute right-0 translate-x-[120%] hidden group-hover:flex flex-row items-center justify-center gap-1 bg-[#404040] p-1 text-xs rounded-md"
+            >
+              Today <span class="px-1 rounded-sm bg-[#666666]">T</span>
+            </kbd>
+          </div>
+          <div
+            class="mt-2 w-full flex flex-row items-center justify-between gap-2 p-2 bg-transparent hover:bg-[#322F2A] transition-all duration-200 rounded-md cursor-pointer group"
+          >
+            <h3 class="text-[#cccccc] font-medium text-base">My Projects</h3>
+            <span
+              class="hidden group-hover:flex items-center justify-center gap-2"
+            >
+              <img
+                src="/public/icons/plus-icon.svg"
+                class="h-6 aspect-square"
+                alt=""
+                srcset=""
+              />
+            </span>
+          </div>
+          <div
+            class="w-full flex flex-row items-center justify-between gap-2 p-2 hover:bg-[#322F2A] transition-all duration-200 rounded-md cursor-pointer group active"
+          >
+            <h3 class="font-normal text-sm"># Imposter</h3>
+          </div>
+        </section>
+      </aside>
+
+      <!-- Toggle Button -->
+      <div
+        id="floatingToggle"
+        onclick="handleSideBarToggle()"
+        class="flex md:hidden fixed top-2 left-2 flex-row justify-center items-center h-8 w-8 p-1 bg-transparent hover:bg-[#322F2A] rounded-md cursor-pointer"
+      >
+        <img
+          src="/public/icons/sidebar-icon.svg"
+          class="h-full w-full"
+          alt=""
+          srcset=""
+        />
+      </div>
+
+      <!-- Add Task Menu -->
+      <div
+        id="addTaskMenu"
+        class="hidden z-30 absolute top-1/3 md:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 sm:w-5/6 md:w-4/6 lg:w-3/5 xl:w-1/2 bg-[#262626] border border-[#555555] rounded-lg p-4"
+      >
+        <input
+          type="text"
+          name="task"
+          id="task"
+          class="border-none outline-none bg-transparent text-[#ffffff] w-full text-2xl font-medium caret-transparent focus:caret-[#ffffff] p-2 rounded-md"
+          autocomplete="off"
+          placeholder="Task Name"
+        />
+        <input
+          type="text"
+          name="description"
+          id="description"
+          class="border-none outline-none bg-transparent text-[#888888] w-full text-base caret-transparent focus:caret-[#888888] p-2 rounded-md"
+          autocomplete="off"
+          placeholder="Description"
+        />
+
+        <div class="p-2 flex flex-row items-center justify-start gap-2">
+          <select
+            class="h-10 p-2 rounded-md border border-[#555555] outline-none bg-transparent text-green-400"
+            name="date"
+            id="date"
+          >
+            <option value="today">
+              Today
+            </option>
+            <option value="tomorrow">Tomorrow</option>
+            <option value="Not Sure">Not Sure</option>
+          </select>
+          <select
+            class="h-10 p-2 rounded-md border border-[#555555] outline-none bg-transparent text-green-400"
+            name="priority"
+            id="priority"
+          >
+            <option value="priority-1">Priority-1</option>
+            <option value="priority-2">Priority-2</option>
+            <option value="priority-3">Priority-3</option>
+            <option value="priority-4">Priority-4</option>
+          </select>
+        </div>
+
+        <hr class="w-full border border-[#555555] my-2" />
+
+        <div class="flex flex-row items-center justify-between p-2">
+          <div class="text-[#555555] text-base font-medium">
+            # <span class="text-[#a0bdf5]">Imposter</span>
+          </div>
+          <div>
+            <button
+            onclick="handleAddTaskMenuToggle()"
+              class="h-10 py-1 px-3 rounded-md bg-transparent hover:bg-[#3D3D3D] text-[#E4E4E4] transition-all duration-200"
+            >
+              Cancel
+            </button>
+            <button
+              class="h-10 py-1 px-3 rounded-md bg-[#ffffff] hover:bg-[#a0bdf5] transition-all duration-200"
+            >
+              Add Task
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+
+      <main class="w-full h-full flex flex-col items-start">
+        <!-- Header Content -->
+        <header class="pl-16 py-3 text-white w-full">
+          <nav class="text-[#cccccc]">Plan / Imposter</nav>
+        </header>
+
+        <!-- Todos Content -->
+
+        <section
+          class="text-white mt-4 px-2.5 w-full h-full flex flex-col justify-start items-start gap-2"
+        >
+          <input
+            type="text"
+            name="title"
+            id="title"
+            class="border-none outline-none bg-transparent w-full text-3xl caret-transparent focus:caret-[#a0bdf5] hover:ring-1 hover:ring-slate-500/50 p-2 rounded-md"
+            placeholder="Title"
+          />
+          <div
+          onclick="handleAddTaskMenuToggle()"
+            class="flex flex-row items-center justify-start gap-2 p-2 bg-transparent transition-all duration-200 cursor-pointer group"
+          >
+            <img
+              src="/public/icons/add-task.svg"
+              class="h-6 aspect-square"
+              alt=""
+              srcset=""
+            />
+            <h3
+              class="text-white group-hover:text-[#a0bdf5] font-medium text-sm"
+            >
+              Add Task
+            </h3>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script defer src="/app/script.js"></script>
+  </body>
+</html>
